@@ -18,9 +18,17 @@ public class Student {
     public String getName() { return name; }
     public List<Course> getRegisteredCourses() { return registeredCourses; }
 
-    public void registerCourse(Course course) {
-        registeredCourses.add(course);
+    public boolean isAlreadyRegistered(String courseCode) {
+        return registeredCourses.stream()
+                .anyMatch(c -> c.getCode().equalsIgnoreCase(courseCode));
     }
+
+    public void registerCourse(Course course) {
+        if (!isAlreadyRegistered(course.getCode())) {
+            registeredCourses.add(course);
+        }
+    }
+
 
     public void dropCourse(Course course) {
         registeredCourses.remove(course);
