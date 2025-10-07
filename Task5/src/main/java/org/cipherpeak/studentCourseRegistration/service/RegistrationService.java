@@ -17,12 +17,23 @@ public class RegistrationService {
         Course course = courseRepo.findByCode(courseCode);
 
         if (student == null || course == null) return false;
-        if (!course.hasAvailableSlot()) return false;
+
+        if (student.isAlreadyRegistered(courseCode)) {
+            System.out.println("⚠️ Already registered for this course!");
+            return false;
+        }
+
+        if (!course.hasAvailableSlot()) {
+            System.out.println("⚠️ No slots available for this course!");
+            return false;
+        }
 
         course.enrollStudent();
         student.registerCourse(course);
         return true;
     }
+
+
 
     public boolean dropCourse(String studentId, String courseCode) {
         Student student = studentRepo.findById(studentId);
