@@ -10,7 +10,7 @@ public class GuessTheNumberGame {
         boolean playAgain = true;
 
         while (playAgain) {
-            int numberToGuess = rand.nextInt(100) + 1; // Random number 1-100
+            int numberToGuess = rand.nextInt(100) + 1; // Random number 1-100000
             int attempts = 0;
             int maxAttempts = 7; // Limit attempts per round
             boolean guessedCorrectly = false;
