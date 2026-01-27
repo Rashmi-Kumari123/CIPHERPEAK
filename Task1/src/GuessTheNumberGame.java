@@ -15,7 +15,7 @@ public class GuessTheNumberGame {
             int maxAttempts = 7; // Limit attempts per round
             boolean guessedCorrectly = false;
 
-            System.out.println("\n🎮 New Round! Guess the number between 1 and 100.");
+            System.out.println("\n🎮 New Round! Guess the number between 1 and 10000.");
             System.out.println("You have " + maxAttempts + " attempts.");
 
             while (attempts < maxAttempts) {
