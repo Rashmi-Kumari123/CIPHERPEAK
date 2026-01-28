@@ -3,8 +3,8 @@ package org.cipherpeak.model;
 import java.util.Map;
 
 public class Student {
-    private String name;
-    private Map<String, Integer> subjectMarks;
+    private final String name;
+    private final Map<String, Integer> subjectMarks;
 
     public Student(String name, Map<String, Integer> subjectMarks) {
         this.name = name;
