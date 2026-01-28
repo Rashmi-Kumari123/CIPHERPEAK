@@ -63,7 +63,6 @@ public class QuizService {
 
         Future<String> future = single.submit(readTask);
         try {
-            // Wait for user input within timeoutSeconds
             return future.get(timeoutSeconds, TimeUnit.SECONDS);
         } catch (TimeoutException te) {
             future.cancel(true); // attempt to cancel the blocked read-thread
@@ -71,7 +70,6 @@ public class QuizService {
         } catch (InterruptedException | ExecutionException e) {
             return null;
         } finally {
-            // shutdown the executor; the blocked read thread may be interrupted or left, but this is acceptable for small runs
             single.shutdownNow();
         }
     }

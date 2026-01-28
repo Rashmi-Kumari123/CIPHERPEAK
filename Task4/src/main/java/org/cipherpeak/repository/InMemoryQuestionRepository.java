@@ -28,6 +28,16 @@ public class InMemoryQuestionRepository implements QuestionRepository {
                 Arrays.asList("6", "8", "4", "10"),
                 "6"
         ));
+        questions.add(new Question(
+                "What is the time complexity of binary search in a sorted array?",
+                Arrays.asList("O(n)", "O(log n)", "O(n log n)", "O(1)"),
+                "O(log n)"
+        ));
+        questions.add(new Question(
+                "Which data structure follows LIFO (Last In First Out) principle?",
+                Arrays.asList("Queue", "Stack", "Array", "Linked List"),
+                "Stack"
+        ));
 
         return questions;
     }
